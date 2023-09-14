@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8-Calculator</title>
+  <link rel="stylesheet" href="style/8-calculator.css">
+</head>
+<body>
+  <p class="title">Calculator</p>
+  <p class="js-result result"></p>
+  <p>
+    <button onclick="
+      updateCalculation('1');
+      " class="rest">1</button>
+    <button onclick="
+      updateCalculation('2');
+    " class="rest">2</button>
+    <button onclick="
+      updateCalculation('3');
+    " class="rest">3</button>
+    <button onclick="
+      updateCalculation(' + ');
+    " class="arithmetics">+</button>
+  </p>
+  <p>
+    <button onclick="
+      updateCalculation('4');
+      " class="rest">4</button>
+    <button onclick="
+      updateCalculation('5');
+    " class="rest">5</button>
+    <button onclick="
+      updateCalculation('6');
+    " class="rest">6</button>
+    <button onclick="
+      updateCalculation(' - ');
+    " class="arithmetics">-</button>
+  </p>
+  <p>
+    <button onclick="
+      updateCalculation('7');
+      " class="rest">7</button>
+    <button onclick="
+      updateCalculation('8');
+    " class="rest">8</button>
+    <button onclick="
+      updateCalculation('9');
+    " class="rest">9</button>
+    <button onclick="
+      updateCalculation(' * ');
+    " class="arithmetics">*</button>
+  </p>
+  <p>
+    <button onclick="
+      updateCalculation('0');
+      " class="rest">0</button>
+    <button onclick="
+      updateCalculation('.');
+    " class="rest">.</button>
+    <button onclick="
+      updateCalculation('=');
+    " class="rest">=</button>
+    <button onclick="
+      updateCalculation(' / ');
+    " class="arithmetics">/</button>
+  </p>
+  <p>
+    <button onclick="
+      calculation = '';
+      localStorage.removeItem('res');
+      displayCalculation();
+      " class="rest fixFont">Clear</button>
+  </p>
+
+  <script src="script/8-calculator.js"></script>
+</body>
+</html>
