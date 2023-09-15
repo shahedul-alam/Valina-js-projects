@@ -74,10 +74,28 @@ const menu = [
 ];
 
 const sectionCenter = document.querySelector('.section-center');
+const filterBtns = document.querySelectorAll('.filter-btn');
 
+// load items
 window.addEventListener('DOMContentLoaded', () => {
   displayMenuItems(menu);
 });
+
+// filter items
+filterBtns.forEach((btn) => {
+  btn.addEventListener('click', (x) => {
+    const catagory = x.currentTarget.dataset.catagory;
+    const menuCatagory = menu.filter((menuItem) => {
+      if(menuItem.category === catagory)
+        return menuItem;
+    });
+    if(catagory === 'all')
+      displayMenuItems(menu);
+    else
+      displayMenuItems(menuCatagory);
+  });
+});
+
 
 function displayMenuItems(menuItems)
 {
