@@ -75,10 +75,14 @@ const menu = [
 
 const sectionCenter = document.querySelector('.section-center');
 
-let allContent = '';
-menu.forEach((item) => {
-  allContent += `
-    <article class="menu-item">
+window.addEventListener('DOMContentLoaded', () => {
+  displayMenuItems(menu);
+});
+
+function displayMenuItems(menuItems)
+{
+  let displayMenu = menuItems.map((item) => {
+    return `<article class="menu-item">
           <img src="${item.img}" class="photo" alt="menu item">
           <div class="item-info">
             <header>
@@ -89,10 +93,8 @@ menu.forEach((item) => {
             ${item.desc}
             </p>
           </div>
-        </article>
-  `
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-  sectionCenter.innerHTML = allContent;
-});
+        </article>`;
+  });
+  displayMenu = displayMenu.join("");
+  sectionCenter.innerHTML = displayMenu;
+}
