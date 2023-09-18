@@ -11,3 +11,34 @@ I just told you! You've killed me! Fry! Quit doing the right thing, you jerk! Mi
   `Man braid celiac synth freegan readymade, pitchfork fam salvia waistcoat lomo bitters gentrify four loko. Pitchfork semiotics post-ironic vegan. Tofu meditation microdosing hashtag semiotics venmo. Flexitarian vape tilde taiyaki. Prism poutine farm-to-table, messenger bag vegan taxidermy tattooed sartorial squid jean shorts fixie selvage trust fund vape.`,
   `Rutters Plate Fleet boom chandler Brethren of the Coast handsomely lookout marooned brigantine knave. Buccaneer gangway jack rum loot spyglass line Jack Tar fore gaff. Gaff topmast scuttle ballast swab draught measured fer yer chains dance the hempen jig Chain Shot yardarm.`,
 ];
+
+// slecting elements
+const form = document.querySelector('.lorem-form');
+const article = document.querySelector('.lorem-text');
+const amount = document.getElementById('amount');
+
+form.addEventListener('submit', (e) => {
+  // preventing defaul;t behaviour
+  e.preventDefault();
+  // convereting input value from string to number
+  const value = parseInt(amount.value);
+  // generating a random value in text range
+  const random = Math.floor(Math.random() * text.length);
+
+  // checking is value out of range
+  if(isNaN(value) || value <= 0 || value > 9)
+    // display one random paragraph form text array
+    article.innerHTML = `<p class="result">${text[random]}</p>`;
+  else
+  {
+    // slicing text to the range and storing it to an new array
+    const slicedText = text.slice(0, value);
+    // generating HTML on sliced text
+    let genarated = slicedText.map((paragraph) => {
+      return `<p class="result">${paragraph}</p>`;
+    }).join('');
+
+    // displaying given number of paragraph
+    article.innerHTML = genarated;
+  }
+});
