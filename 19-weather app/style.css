@@ -106,3 +106,11 @@ body
   font-size: 14px;
   display: none;
 }
+.card h1
+{
+  font-size: 30px;
+  font-weight: bold;
+  color: #ebfffc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
