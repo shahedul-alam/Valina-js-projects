@@ -12,7 +12,21 @@
     <img src="./images/eye-close.png" alt="closed-icon" id="eye-icon">
   </div>
   <script>
-    
+    const eyeIcon = document.getElementById('eye-icon');
+    const input = document.getElementById('password');
+
+    eyeIcon.addEventListener('click', (e) => {
+      if(input.type === 'password')
+      {
+        input.type = 'text';
+        e.currentTarget.src = "./images/eye-open.png";
+      }
+      else
+      {
+        input.type = 'password';
+        e.currentTarget.src = "./images/eye-close.png";
+      }
+    });
   </script>
 </body>
 </html>
